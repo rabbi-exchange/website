@@ -2,26 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+
+/* .head-bg{
+    background: 
+  } */
+  
+  .header-bg{
+    height: 70%;
+    box-shadow: 1px 10px 4px 0px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 1px 10px 4px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 1px 10px 4px 0px rgba(0,0,0,0.48);
+    transition: transform ease 1s;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  body::-webkit-scrollbar-track {
+    background: #000312;       /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: grey;   /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #000312;  /* creates padding around scroll thumb */
+  }
+
+  .box-shadow{
+    box-shadow: 1px 10px 4px 0px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 1px 10px 4px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 1px 10px 4px 0px rgba(0,0,0,0.48);
+  }

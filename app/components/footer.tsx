@@ -11,6 +11,7 @@ const Footer = (props: Props) => {
         <div className='-mb-32 flex justify-between px-3'>
             <span>
                 <h6 className='font-bold pb-2'>Socials</h6>
+                <div></div>
             </span>
             <span className='flex pl-9 gap-6 lg:gap-16 z-20 text-primary-content'>
                     <span >

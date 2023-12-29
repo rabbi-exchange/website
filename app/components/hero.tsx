@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect } from 'react';
 import Crypto1 from '@/public/rabbi1.webp';
 import Crypto2 from '@/public/rabbi2.webp';
 import Crypto3 from '@/public/rabbi3.webp';
@@ -8,6 +8,10 @@ import { imgProps } from './oneSlide';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { AnimatePresence, motion } from 'framer-motion';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Lottie from 'lottie-react';
+import AnimRabi from '@/public/rabbiAnim.json'
 
 
 type Props = {}
@@ -61,6 +65,10 @@ const responsive = {
 
 
 const Hero = (props: Props) => {
+
+  useEffect(() => {
+    AOS.init({duration: 1500});
+  }, [])
  
   return (
     <div className='-z-40'>
@@ -89,17 +97,20 @@ const Hero = (props: Props) => {
 </Carousel>
 
 
-<div className='flex flex-col lg:flex-row justify-evenly py-12 gap-5 px-3'>
-<a href='trade'><motion.button className='bg-gradient-to-r from-base-content to-primary text-base-300 px-5 py-2 rounded-md h-14 w-40 hover:bg-gradient-to-r
+<div className='flex flex-col lg:flex-row justify-evenly py-12 gap-5 px-28'>
+<a href='trade'><motion.button className=' bg-gradient-to-r from-base-content to-primary text-base-300 px-5 py-2 rounded-md h-14 w-40 hover:bg-gradient-to-r
           hover:from-primary hover:to-base-content transition duration-150 ease-in-out'>
   Start Trading
   </motion.button>
   </a>
 </div>
-<div className='py-24'>
+<div data-aos="fade-up"  className='py-24'>
     <h1 className='text-3xl md:text-4xl font-extrabold text-center primary-content pb-5'>
                 No KYC Required.
         </h1>
+        <div className='bg-black w-screen opacity-40 static'>
+        <Lottie className='w-64' animationData={AnimRabi}/>
+        </div>
         <p className='text-center font-light text-md base-content'>
                 Trade Cryptcurrencies Like BTC, ETH, USDT, BUSD to NGN
             </p>

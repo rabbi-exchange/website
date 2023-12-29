@@ -87,13 +87,14 @@ const Nav = ({ user }: Session) => {
                     </a>
                 )}
                 {user && (
-                    <ul className='flex'>
+                  <a href='api/auth/signout'>  <ul className='flex'>
                     <li className='mr-7 hidden md:flex'>
                         <Image className='rounded-full ml-5 -mt-2 object-cover' src={user?.image as string} 
                         alt={user?.name as string} width={45} height={45}/>
                     </li>
                     <li className='hidden lg:flex pt-2'>{user?.name}</li>
                     </ul>
+                    </a>
                 )}
             </div>
 
@@ -152,13 +153,14 @@ const Nav = ({ user }: Session) => {
                     </a>
                 )}
                 {user && (
-                    <ul className='flex'>
+                 <a href='api/auth/signout'>   <ul className='flex'>
                     <li className='mr-7 flex md:hidden'>
                         <Image className='rounded-full ml-5 -mt-2 object-cover' src={user?.image as string} 
-                        alt={user?.name as string} width={45} height={45} onClick={()=>{signOut}}/>
+                        alt={user?.name as string} width={45} height={45} />
                     </li>
                     <li className='flex md:hidden pt-2'>{user?.name}</li>
                     </ul>
+                    </a>
                 )}
             </motion.div>
 
